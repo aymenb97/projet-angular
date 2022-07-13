@@ -1,0 +1,13 @@
+<h3 class="m-3">Produits</h3>
+<div class="row m-4 w-50 mx-auto">
+    <div *ngFor="let produit of listProduits" class="card m-2" style="width: 18rem;">
+
+        <div class="card-body">
+            <h5 class="card-title">{{produit.titre}}</h5>
+            <p class="card-text">{{produit.description}}</p>
+            <a href="#" class="btn btn-primary">Ajouter Au Panier</a>
+        </div>
+    </div>
+
+
+</div>
