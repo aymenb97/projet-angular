@@ -23,6 +23,10 @@ export class ProduitService {
     this.listeProduits.push(new Produit(this.randomId(5), p.titre, p.description, p.prix))
     this.produitsChange.next(this.listeProduits)
   }
+  modifierProduit(p: Produit, id: string) {
+    let produit = this.listeProduits.find(x => x.id == id);
+    produit = p;
+  }
   supprimerProduit(id: String) {
     this.listeProduits.splice(this.listeProduits.findIndex(el => el.id === id), 1);
     this.produitsChange.next(this.listeProduits)

@@ -19,8 +19,7 @@ export class ModifierProduitComponent implements OnInit {
     console.log(this.produit)
   }
   modifierProduitHandler(values: Produit) {
-
-    alert(values)
+    this.produitService.modifierProduit(values, values.id);
+    this.router.navigate(["admin", "gerer-produits"]);
   }
-
 }

@@ -1,5 +1,6 @@
 <h3 class="m-3">Panier</h3>
 <div class="w-50 m-auto mt-5">
+
     <table class="table table-hover">
         <thead>
             <tr>
@@ -12,16 +13,18 @@
         </thead>
         <tbody>
 
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+            <tr *ngFor="let produit of panier">
+                <th scope="row">{{produit.id}}</th>
+                <td>{{produit.titre}}</td>
+                <td>{{produit.description}}</td>
+                <td>{{produit.prix}}</td>
                 <td>
-                    <button class="btn btn-danger mx-1">X</button>
+                    <button (click)="supprimerProduit(produit.id)" class="btn btn-danger mx-1">X</button>
                 </td>
             </tr>
 
         </tbody>
     </table>
+    <button [disabled]="panier.length>0? false : true" (click)="creerCommande()"
+        class="btn btn-success mt-3">Commander</button>
 </div>

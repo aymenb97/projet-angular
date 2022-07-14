@@ -4,18 +4,18 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Nombre Produits</th>
+                <th scope="col"> Produits</th>
+                <th scope="col">Total</th>
                 <th scope="col">Date Création</th>
-
             </tr>
         </thead>
         <tbody>
 
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-
-                <td>@mdo</td>
+            <tr *ngFor="let c of commandes">
+                <th scope="row">{{c.id}}</th>
+                <td>{{c.produits}}</td>
+                <td>{{c.total}}</td>
+                <td>{{c.date | date}}</td>
 
             </tr>
 

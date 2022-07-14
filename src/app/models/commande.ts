@@ -3,9 +3,11 @@ export class Commande {
 
     constructor(
         public id: string,
-        public date: string,
-        public produits: Produit[],
+        public date: Date,
+        public total: Number,
+        public produits: string[],
     ) {
 
     }
+
 }
